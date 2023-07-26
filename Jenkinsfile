@@ -1,8 +1,9 @@
 pipeline {
-    agent any
+    agent {docker { image "mavern:3.6.3"}}
         stages {
             stage('Build') {
                 steps{
+					sh "mvn --version"
                     echo "Build"
                 }
 			}
